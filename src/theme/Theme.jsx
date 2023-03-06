@@ -37,7 +37,7 @@ const rawTheme = createTheme({
     fontUpperCase: "uppercase",
     fontLowerCase: "lowercase",
     fontCapitalize: "capitalize",
-  },
+  }
 });
 
 const fontHeader = {

@@ -1,14 +1,16 @@
 import React from "react";
-import AppBar from "../components/header/AppBar";
 import Hero from "../components/hero/Hero";
 import Featured from "../components/featured/Featured";
+import Benefits from "../components/benefits/Benefits";
+import Steps from "../components/steps/Steps";
 
 const Home = () => {
   return (
     <>
-      <AppBar />
       <Hero />
       <Featured />
+      <Benefits />
+      <Steps />
     </>
   );
 };
