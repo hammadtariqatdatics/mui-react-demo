@@ -7,7 +7,18 @@ import { Link } from "react-router-dom";
 const AppBar = () => {
   return (
     <MuiAppBar position="fixed">
-      <MuiToolbar sx={{ justifyContent: "space-between" }}>
+      <MuiToolbar
+        sx={{
+          justifyContent: "space-between",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
+        }}
+      >
         <Box sx={{ flex: 1 }} />
         <Link
           to="/"
@@ -16,6 +27,10 @@ const AppBar = () => {
             textDecoration: "none",
             fontSize: "24px",
             textTransform: "uppercase",
+            marginBottom: {
+              xs: "10px",
+              md: "10px",
+            },
           }}
         >
           Haliton
