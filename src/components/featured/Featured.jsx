@@ -15,11 +15,17 @@ const Featured = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "auto",
           backgroundPosition: "center",
-          padding: "200px 0px 200px 0px",
+          padding: {
+            xl: "200px 0px",
+            lg: "200px 0px",
+            md: "200px 0px",
+            sm: "100px 0px",
+            xs: "100px 0px",
+          },
         }}
       >
         <Container>
-          <Grid container>
+          <Grid container rowGap={5}>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
               <Box align="center">
                 <Box component="img" src={Icon1} height="55px" />
@@ -40,6 +46,13 @@ const Featured = () => {
                   padding: "0px 10px",
                   fontWeight: "300",
                   lineHeight: "1.334",
+                  textAlign: {
+                    xl: "left",
+                    lg: "left",
+                    md: "left",
+                    sm: "center",
+                    xs: "center",
+                  },
                 }}
               >
                 From the latest trendy boutique hotel to the iconic palace with
@@ -67,6 +80,13 @@ const Featured = () => {
                   padding: "0px 10px",
                   fontWeight: "300",
                   lineHeight: "1.334",
+                  textAlign: {
+                    xl: "left",
+                    lg: "left",
+                    md: "left",
+                    sm: "center",
+                    xs: "center",
+                  },
                 }}
               >
                 Privatize a pool, take a Japanese bath or wake up in 900m2 of
@@ -93,6 +113,13 @@ const Featured = () => {
                   padding: "0px 10px",
                   fontWeight: "300",
                   lineHeight: "1.334",
+                  textAlign: {
+                    xl: "left",
+                    lg: "left",
+                    md: "left",
+                    sm: "center",
+                    xs: "center",
+                  },
                 }}
               >
                 By registering, you will access specially negotiated rates that

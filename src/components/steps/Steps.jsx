@@ -14,7 +14,13 @@ const Steps = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "auto",
           backgroundPosition: "center",
-          padding: "80px 0px 120px 0px",
+          padding: {
+            xl: "80px 0px 120px 0px",
+            lg: "80px 0px 120px 0px",
+            md: "80px 0px 120px 0px",
+            sm: "100px 0px",
+            xs: "100px 0px",
+          },
         }}
       >
         <Container>
@@ -27,12 +33,18 @@ const Steps = () => {
                 width: "25px",
                 height: "4px",
                 display: "block",
-                margin: "8px 0px 112px 0px",
+                margin: {
+                  xl: "8px 0px 112px 0px",
+                  lg: "8px 0px 112px 0px",
+                  md: "8px 0px 112px 0px",
+                  sm: "8px 0px 50px 0px",
+                  xs: "8px 0px 50px 0px",
+                },
                 background: "#ff3366",
               }}
             />
           </Box>
-          <Grid container>
+          <Grid container rowGap={5}>
             {steps.map((items) => {
               const { id, img, title, desc } = items;
               return (

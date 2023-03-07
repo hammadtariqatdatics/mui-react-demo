@@ -11,7 +11,7 @@ const Benefits = () => {
   return (
     <Box
       sx={{
-        margin: "64px 0px 32px 0px",
+        margin: "64px 0px 64px 0px",
       }}
     >
       <Container>
