@@ -1,50 +1,63 @@
+import Snorkeling from "../assets/img/snorkeling.jpg";
+import Walking from "../assets/img/walking.jpg";
+import Shopping from "../assets/img/shopping.jpg";
+import Tour from "../assets/img/tour.jpg";
+import Reading from "../assets/img/reading.jpg";
+import Fitness from "../assets/img/fitness.jpg";
+import Gastronomy from "../assets/img/gastronomy.jpg";
+import Hiking from "../assets/img/hiking.jpg";
+import Massage from "../assets/img/massage.jpg";
 import Icon4 from "../assets/img/icon4.svg";
 import Icon5 from "../assets/img/icon5.svg";
 import Icon6 from "../assets/img/icon6.svg";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
+import Users from "../pages/Users";
 
 const benefitsData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    img: Snorkeling,
     title: "Snorkeling",
     author: "@bkristastucchio",
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: Massage,
     title: "Massage",
     author: "@rollelflex_graphy726",
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    img: Hiking,
     title: "Hiking",
     author: "@helloimnik",
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+    img: Tour,
     title: "Tour",
     author: "@nolanissac",
   },
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
+    img: Gastronomy,
     title: "Gastronomy",
     author: "@hjrc33",
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+    img: Shopping,
     title: "Shopping",
     author: "@arwinneil",
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+    img: Walking,
     title: "Walking",
     author: "@tjdragotta",
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+    img: Fitness,
     title: "Fitness",
     author: "@katie_wasserman",
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+    img: Reading,
     title: "Reading",
     author: "@katie_wasserman",
   },
@@ -71,4 +84,27 @@ const stepsData = [
   },
 ];
 
-export { benefitsData, stepsData };
+const routesData = [
+  {
+    id: 0,
+    path: "/",
+    element: <Home />,
+  },
+  {
+    id: 1,
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    id: 2,
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    id: 3,
+    path: "/users",
+    element: <Users />,
+  },
+];
+
+export { benefitsData, stepsData, routesData };

@@ -1,37 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
-import Layout from "../layout";
+import { routesData } from "../utils";
 
 const index = () => {
+  const [routes, setRoutes] = useState(routesData);
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <Layout>
-            <Home />
-          </Layout>
-        }
-      />
-      <Route
-        path="/login"
-        element={
-          <Layout>
-            <Login />
-          </Layout>
-        }
-      />
-      <Route
-        path="/signup"
-        element={
-          <Layout>
-            <Signup />
-          </Layout>
-        }
-      />
+      {routes.map((route) => {
+        const { id, path, element } = route;
+        return <Route path={path} element={element} key={id} />;
+      })}
     </Routes>
   );
 };
