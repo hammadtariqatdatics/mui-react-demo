@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "firstname": "Hammad",
+      "lastname": "Tariq",
+      "email": "hammad@gmail.com",
+      "password": "12322222222222222222222222222222222222222222222232323232232323223",
+      "gender": "Male",
+      "dob": "2023-03-09",
+      "country": "Pakistan",
+      "city": "Gujranwala",
+      "phone": "090098998",
+      "id": 1
+    }
+  ]
+}

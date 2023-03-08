@@ -1,16 +1,16 @@
 import React from "react";
-import { Typography, Container } from "@mui/material";
-import { Box } from "@mui/system";
+import HeroBanner from "../components/hero/HeroBanner";
+import SignupForm from "../components/signupform/SignupForm";
 
 const Signup = () => {
   return (
-    <Container>
-      <Box sx={{ padding: "120px 0px 240px 0px" }}>
-        <Typography variant="h4" component="h4">
-          Sign up
-        </Typography>
-      </Box>
-    </Container>
+    <>
+      <HeroBanner
+        headingText="Sign Up"
+        paraText="Here are the Sign Up form, you can become part of our community"
+      />
+      <SignupForm />
+    </>
   );
 };
 
