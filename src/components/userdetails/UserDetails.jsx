@@ -6,19 +6,19 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import axios from "../../utils/Axios";
+import http from "../../utils/Axios";
 import { Container, Box } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const UserDetails = () => {
   const [usersList, setUsersList] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    setIsLoading(true);
     const getUsers = async () => {
       try {
-        const response = await axios.get("/users");
-        setUsersList(response.data);
+        const response = await http.get("/users");
+        console.log(response);
+        setUsersList(response);
         setIsLoading(false);
       } catch (error) {
         console.log("Api is not working", error);

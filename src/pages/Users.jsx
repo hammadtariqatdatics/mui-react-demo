@@ -5,7 +5,10 @@ import UserDetails from "../components/userdetails/UserDetails";
 const Users = () => {
   return (
     <>
-      <HeroBanner />
+      <HeroBanner
+        headingText="Users"
+        paraText="Here are the best Haliton customers details for the last five years"
+      />
       <UserDetails />
     </>
   );

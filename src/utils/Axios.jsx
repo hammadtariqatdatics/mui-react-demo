@@ -1,29 +1,37 @@
-import { useEffect } from "react";
 import axios from "axios";
 
-const instance = axios.create({
+// creating instance of axios
+const http = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com",
+  // headers: {
+  //   Accept: "application/json",
+  // },
 });
 
-const AxiosInterceptors = ({ children }) => {
-  useEffect(() => {
-    const responseInterceptor = (response) => {
-      return response;
-    };
-    const errorInterceptor = (error) => {
-      if (error.response.status === 401) {
-        console.log(error.response);
-      }
-      return Promise.reject();
-    };
-    const interceptor = instance.interceptors.response.use(
-      responseInterceptor,
-      errorInterceptor
-    );
-    return () => instance.interceptors.response.eject(interceptor);
-  }, []);
-  return children;
-};
+// handle the request using http
+http.interceptors.request.use(
+  (request) => {
+    request.headers.Accept = `application/json`;
+    console.log("request send");
+    return request;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
-export default instance;
-export { AxiosInterceptors };
+// handle the response using http
+http.interceptors.response.use(
+  (response) => {
+    console.log("got response");
+    return response?.data;
+  },
+  (error) => {
+    if (error.response.status === 404) {
+      console.log("Not Found");
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default http;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MuiAppBar from "../MuiAppBar";
 import MuiToolbar from "../MuiToolbar";
 import { Box } from "@mui/material";
@@ -10,6 +10,16 @@ import MenuItem from "@mui/material/MenuItem";
 
 const AppBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [isLoggedIn, setIsLoggedin] = useState(false);
+
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    console.log(loggedInUser);
+    if (loggedInUser) {
+      setIsLoggedin(true);
+    }
+  }, []);
+
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -40,7 +50,7 @@ const AppBar = () => {
       >
         <Box sx={{ flex: 1 }} />
         <Link
-          to="/"
+          to="/home"
           style={{
             color: "#fff",
             textDecoration: "none",
@@ -63,41 +73,60 @@ const AppBar = () => {
             justifyContent: "flex-end",
           }}
         >
-          <Link
-            to="/login"
-            style={{
-              color: "#fff",
-              textDecoration: "none",
-              fontSize: "18px",
-              textTransform: "uppercase",
-            }}
-          >
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            style={{
-              color: "#ff3366",
-              textDecoration: "none",
-              fontSize: "18px",
-              marginLeft: "24px",
-              textTransform: "uppercase",
-            }}
-          >
-            Sign Up
-          </Link>
-          <Link
-            to="/users"
-            style={{
-              color: "#ffc071",
-              textDecoration: "none",
-              fontSize: "18px",
-              marginLeft: "24px",
-              textTransform: "uppercase",
-            }}
-          >
-            Users
-          </Link>
+          {isLoggedIn ? (
+            <>
+              <Link
+                to="/users"
+                style={{
+                  color: "#ffc071",
+                  textDecoration: "none",
+                  fontSize: "18px",
+                  marginLeft: "24px",
+                  textTransform: "uppercase",
+                }}
+              >
+                Users
+              </Link>
+              <Link
+                to="/logout"
+                style={{
+                  color: "#ff3366",
+                  textDecoration: "none",
+                  fontSize: "18px",
+                  marginLeft: "24px",
+                  textTransform: "uppercase",
+                }}
+              >
+                Logout
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/"
+                style={{
+                  color: "#fff",
+                  textDecoration: "none",
+                  fontSize: "18px",
+                  textTransform: "uppercase",
+                }}
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                style={{
+                  color: "#ff3366",
+                  textDecoration: "none",
+                  fontSize: "18px",
+                  marginLeft: "24px",
+                  textTransform: "uppercase",
+                }}
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
         </Box>
         <Box
           sx={{
@@ -129,7 +158,7 @@ const AppBar = () => {
             }}
           >
             <Link
-              to="/login"
+              to="/"
               style={{
                 color: "#000",
                 textDecoration: "none",
@@ -160,6 +189,17 @@ const AppBar = () => {
               }}
             >
               <MenuItem>Users</MenuItem>
+            </Link>
+            <Link
+              to="/logout"
+              style={{
+                color: "#000",
+                textDecoration: "none",
+                fontSize: "24px",
+                textTransform: "uppercase",
+              }}
+            >
+              <MenuItem>Logout</MenuItem>
             </Link>
           </Menu>
         </Box>

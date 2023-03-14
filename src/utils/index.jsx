@@ -14,6 +14,8 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Users from "../pages/Users";
+import Logout from "../pages/Logout";
+import Auth from "../auth/Auth";
 
 const benefitsData = [
   {
@@ -87,12 +89,16 @@ const stepsData = [
 const routesData = [
   {
     id: 0,
-    path: "/",
-    element: <Home />,
+    path: "/home",
+    element: (
+      <Auth>
+        <Home />
+      </Auth>
+    ),
   },
   {
     id: 1,
-    path: "/login",
+    path: "/",
     element: <Login />,
   },
   {
@@ -103,7 +109,20 @@ const routesData = [
   {
     id: 3,
     path: "/users",
-    element: <Users />,
+    element: (
+      <Auth>
+        <Users />
+      </Auth>
+    ),
+  },
+  {
+    id: 4,
+    path: "/logout",
+    element: (
+      <Auth>
+        <Logout />
+      </Auth>
+    ),
   },
 ];
 
